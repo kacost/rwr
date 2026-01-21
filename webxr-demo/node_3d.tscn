@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://lwjpy1mxgdla"]
+[gd_scene load_steps=18 format=3 uid="uid://lwjpy1mxgdla"]
 
 [ext_resource type="Script" uid="uid://dc1lu38185dod" path="res://node_3d.gd" id="1_61lph"]
 [ext_resource type="PackedScene" uid="uid://b8sqplh0apc1y" path="res://assets/models/rigged_hand.glb" id="2_noarx"]
 [ext_resource type="Script" uid="uid://78gjb1wfvmat" path="res://Player.gd" id="2_r3fl7"]
 [ext_resource type="Script" uid="uid://dcmakcalqcv6a" path="res://teleport.gd" id="3_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://dlybs7slvmve7" path="res://assets/models/sponge.glb" id="5_jka67"]
+[ext_resource type="PackedScene" uid="uid://blm10ngwq4st4" path="res://assets/models/skoda.glb" id="6_i5arm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
 size = Vector2(20, 20)
@@ -66,6 +67,7 @@ shape = SubResource("BoxShape3D_noarx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, -4)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Level/Wierza orientacyjna"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8462715, -0.054561615, -1.9572535)
 mesh = SubResource("CylinderMesh_noarx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level/Wierza orientacyjna"]
@@ -133,6 +135,9 @@ visible = false
 mesh = SubResource("CylinderMesh_a0tk4")
 
 [node name="sponge" parent="." instance=ExtResource("5_jka67")]
-transform = Transform3D(0.099999204, 0.00033126376, -0.00022474103, -0.00031743152, 0.099825375, 0.005898482, 0.00024388812, -0.0058977213, 0.09982564, 0, 0, 0)
+transform = Transform3D(0.099999204, 0.00033126376, -0.00022474103, -0.00031743152, 0.099825375, 0.005898482, 0.00024388812, -0.0058977213, 0.09982564, -0.55604553, -1.0877857, 11.158699)
+
+[node name="skoda" parent="." instance=ExtResource("6_i5arm")]
+transform = Transform3D(0.23677585, -0.35557586, 2.969428, 0.02826316, 2.9788532, 0.35445082, -2.9905078, 8.381903e-09, 0.23845673, 6.48067, 0.918715, 14.928662)
 
 [connection signal="button_released" from="Player/XROrigin3D/RightController" to="Player/XROrigin3D/RightController" method="_on_right_controller_button_released"]
