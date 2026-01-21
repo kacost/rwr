@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://lwjpy1mxgdla"]
+[gd_scene load_steps=17 format=3 uid="uid://lwjpy1mxgdla"]
 
 [ext_resource type="Script" uid="uid://dc1lu38185dod" path="res://node_3d.gd" id="1_61lph"]
 [ext_resource type="PackedScene" uid="uid://b8sqplh0apc1y" path="res://assets/models/rigged_hand.glb" id="2_noarx"]
 [ext_resource type="Script" uid="uid://78gjb1wfvmat" path="res://Player.gd" id="2_r3fl7"]
 [ext_resource type="Script" uid="uid://dcmakcalqcv6a" path="res://teleport.gd" id="3_a0tk4"]
+[ext_resource type="PackedScene" uid="uid://dlybs7slvmve7" path="res://assets/models/sponge.glb" id="5_jka67"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
 size = Vector2(20, 20)
@@ -130,5 +131,8 @@ target_position = Vector3(0, 0, -10)
 top_level = true
 visible = false
 mesh = SubResource("CylinderMesh_a0tk4")
+
+[node name="sponge" parent="." instance=ExtResource("5_jka67")]
+transform = Transform3D(0.0999146, 0.004131763, 0, -0.004131763, 0.0999146, 0, 0, 0, 0.1, -20.173767, -24.081024, 17.492073)
 
 [connection signal="button_released" from="Player/XROrigin3D/RightController" to="Player/XROrigin3D/RightController" method="_on_right_controller_button_released"]
